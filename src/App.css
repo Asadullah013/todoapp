@@ -1,0 +1,417 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+/* --- Global Styles --- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #e8f5e9; /* soft mint */
+  color: #333;
+}
+
+/* --- Main layout wrapper --- */
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 10px;
+}
+
+/* --- Main Card --- */
+.todo-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.todo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Title / Header (if you keep one) --- */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+/* --- Add Todo form --- */
+input[type="text"], textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 8px 0 16px 0;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/* --- Buttons --- */
+button {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+button.add-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+button.add-btn:hover {
+  background-color: #43a047;
+}
+
+button.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+button.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* --- Todo List Items --- */
+.todo-item {
+  border-bottom: 1px solid #eee;
+  padding: 12px 0;
+}
+
+.todo-title {
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0;
+}
+
+.todo-desc {
+  color: #555;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  margin-top: 30px;
+  color: #777;
+  font-size: 13px;
+}
+
+/* ----------- TODO CARD STYLE ----------- */
+.todo-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.todo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.todo-content {
+  flex: 1;
+  padding-right: 10px;
+}
+
+.todo-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2e7d32;
+  margin-bottom: 6px;
+}
+
+.todo-desc {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
+
+/* ----------- DELETE BUTTON STYLE ----------- */
+.delete-btn {
+  background-color: #f44336 !important;
+  border: none;
+  color: white;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 6px 12px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f !important;
+  transform: scale(1.05);
+}
+
+/* ----------- TODO LIST CONTAINER ----------- */
+.container {
+  max-width: 600px;
+}
+
+h3 {
+  color: #2e7d32;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+/* Floating button */
+.floating-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background-color: #0d6efd;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.floating-btn:hover {
+  background-color: #0b5ed7;
+  transform: scale(1.1);
+}
+
+/* Popup background overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Popup box */
+.popup-box {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.3s ease;
+}
+
+/* Animation for popup */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional: AddTodo styling */
+.addtodo-container input {
+  border-radius: 10px;
+  padding: 10px;
+}
+/* ===== 🌞 Warm & Energetic Theme ===== */
+
+/* Page background */
+body {
+  background-color: #fff7e6; /* light cream */
+  color: #4e342e; /* warm dark brown text */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header */
+nav.navbar, .app-header {
+  background-color: #fd7e14; /* orange */
+  color: #ffffff;
+}
+
+.navbar-brand,
+.navbar-text,
+.nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+/* Footer */
+footer {
+  background-color: #fd7e14;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Todo cards */
+.todo-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.todo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Buttons */
+.btn-success {
+  background-color: #fd7e14;
+  border-color: #fd7e14;
+}
+
+.btn-success:hover {
+  background-color: #e96b00;
+  border-color: #e96b00;
+}
+
+/* Floating + Button */
+.floating-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background-color: #fd7e14;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 999;
+
+  /* 🟢 Center the + icon perfectly */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.floating-btn:hover {
+  background-color: #e96b00;
+  transform: scale(1.1);
+}
+
+/* Popup box */
+.popup-box {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.3s ease;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#searchButton {
+  background-color: #ffffff !important;
+  color: #fd7e14 !important;
+  border: 2px solid #ffffff !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#searchButton:hover {
+  background-color: #ffe6cc !important; /* light cream hover */
+  color: #e96b00 !important;
+  border-color: #ffe6cc !important;
+}
+
