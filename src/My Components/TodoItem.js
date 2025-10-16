@@ -97,7 +97,7 @@ const TodoItem = ({ todo, onDelete }) => {
                   className="btn btn-danger"
                   onClick={handleConfirmDelete}
                 >
-                  Yes, Delete
+                  Yes
                 </button>
               </div>
             </div>
@@ -109,3 +109,4 @@ const TodoItem = ({ todo, onDelete }) => {
 };
 
 export default TodoItem;
+
