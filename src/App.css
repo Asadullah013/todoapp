@@ -414,4 +414,68 @@ footer {
   color: #e96b00 !important;
   border-color: #ffe6cc !important;
 }
+/* === Custom Orange Checkbox === */
+/* 🟠 Bigger orange checkbox */
+
+
+/* 🕊️ Smooth fade-out delete animation */
+.fade-out {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.todo-checkbox {
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  margin-right: 12px;
+  position: relative;
+  appearance: none;           /* removes browser default look */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  border: 2px solid #fd7e14;  /* orange border */
+  border-radius: 6px;
+  background-color: #fff;     /* white background */
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.todo-checkbox:hover {
+  transform: scale(1.1);
+}
+
+/* When checked — orange box with white tick */
+.todo-checkbox:checked {
+  background-color: #fd7e14;  /* orange fill */
+  border-color: #fd7e14;
+}
+
+/* Add white tick */
+.todo-checkbox:checked::after {
+  content: "✔";
+  position: absolute;
+  top: 0;
+  left: 5px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+/* === 🌀 Smooth slide-out animation for delete === */
+.slide-out-right {
+  animation: slideOutRight 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideOutRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(120%);
+  }
+}
+
 
